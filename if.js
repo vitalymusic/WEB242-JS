@@ -25,24 +25,32 @@ let divide = (a,b)=>{return a/b};
 
 function count(int1,int2,action){
     if(action=="+"){
-        document.write(`Summa chisel: ${sum(int1,int2)}`)
+        output(`Summa chisel: ${sum(int1,int2)}`)
     }
     else if(action=="-"){
-        document.write(`Raznica chisel: ${minus(int1,int2)}`)
+        output(`Raznica chisel: ${minus(int1,int2)}`)
     }
     else if(action=="*"){
-        document.write(`Umnozhenije chisel: ${multiply(int1,int2)}`)
+        output(`Umnozhenije chisel: ${multiply(int1,int2)}`)
     }
     else if(action=="/"){
-        document.write(`Delenije chisel: ${divide(int1,int2)}`)
+        output(`Delenije chisel: ${divide(int1,int2)}`)
     }else{
-        document.write(`Takogo delatj ne umejem`);
+        output(`Takogo delatj ne umejem`);
     }
 
 
 }
 
+function output(text){
+    document.querySelector(".result").innerHTML = text;
+}
 
-count(30,67,"-");
+function countHandler(){
+    let int1 = +document.querySelector("input[name='int1']").value,
+        int2 = +document.querySelector("input[name='int2']").value,
+        action = document.querySelector("select[name='action']").value;
+    count(int1,int2,action);
+}
 
 // calc + - * / 
