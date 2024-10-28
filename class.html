@@ -1,0 +1,41 @@
+<script>
+   class User{
+    constructor(name,email){
+        this.name = name;
+        this.email = email;
+    }
+    // name = "User1";
+    // email = "user1@inbox.lv";
+    password = "Qwerty123";
+
+    sayHello(){
+        return alert(`My name is ${this.name}!`)
+    }
+
+   }
+   
+
+   class AdminUser extends User{
+        constructor(name,email){
+            super(name,email);
+            this.admin = true;
+        }
+
+   }
+
+
+   let Vasja = new User();
+   Vasja.name = "Vasja";
+   Vasja.email = "ivan@inbox.lv";
+
+   let Jurij = new User("Jurij","jurij@inbox.lv")
+   console.log(Vasja);
+   console.log(Jurij);
+
+
+
+   let Alex = new AdminUser("Alex","alex@inbox.lv");
+   console.log(Alex);
+   Alex.sayHello();
+
+</script>
