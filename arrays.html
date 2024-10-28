@@ -30,8 +30,34 @@
         document.write(day);
     }
 
-    
+    // 
+        // forEach
 
+       days.forEach(function(item,index,array){
+            return item.toUpperCase();
+        })
+
+         days2 = days.map(function(item,index,array){
+            return item.toUpperCase();
+        })
+
+        console.log(days2);
+
+
+        let filteredDays = days.filter(function(item){
+            if(item.match("Среда")){
+                return item;
+            }
+        })
+
+        console.log(filteredDays);
+        let numbers = [1,5,12,90,13,78,71]
+        let sortedArray = numbers.sort(function(a,b){
+            return a - b
+        });
+
+        console.log(sortedArray);
+        
 
 
 </script>
