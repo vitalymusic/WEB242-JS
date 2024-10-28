@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text" name="" id="text">
+    <button onclick="addTask()">Add Task</button>
+    <ul>
+
+    </ul>
+
+    <script>
+        
+        let list = document.querySelector('ul');
+
+         let tasks = [];
+         
+         
+        function addTask(){
+            let task = document.querySelector('#text');
+            tasks.push(task.value);
+            printTasks(tasks);
+            task.value="";
+        }
+
+        function printTasks(data){
+            list.innerHTML = "";
+            for(task of tasks){
+                list.innerHTML += `<li>${task}</li>`;
+            }
+        }
+
+    </script>
 </body>
 </html>
