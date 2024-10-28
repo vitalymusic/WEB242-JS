@@ -61,8 +61,18 @@ function count(int1,int2,action){
 }
 
 function output(text){
-    document.querySelector(".result").innerHTML = text;
+
+    // if(text.length>0){
+    //     document.querySelector(".result").innerHTML = text;
+    // }else{
+    // alert("error")
+    // }
+    text.length>0?document.querySelector(".result").innerHTML = text:console.error("Error");
+    
+    // Ternate aperator
 }
+
+output("");
 
 function countHandler(){
     let int1 = +document.querySelector("input[name='int1']").value,
