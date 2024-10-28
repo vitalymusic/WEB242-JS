@@ -1,0 +1,37 @@
+<script>
+    let arr1 = [];
+    arr1.push("Stroka");
+    arr1.push(123);
+    arr1.push(true);
+    arr1.push([1,2,3]);
+
+    arr1.pop();
+
+    arr1.unshift("first");
+
+    arr1.shift();
+
+
+    console.log(arr1.length);
+    console.log(arr1);
+
+
+    let days = ["Понедельник","Вторник","Среда"];
+
+    // for(let i = 0; i<days.length;i++){
+    //     document.write(days[i])
+    // }
+
+    for(x in days){
+        document.write(days[x])
+    }
+
+    for(day of days){
+        document.write(day);
+    }
+
+    
+
+
+
+</script>
