@@ -17,9 +17,9 @@
     <input type="color" name="" id="colorInput">
     <hr>
 
-    <button>Button 1</button>
-    <button>Button 2</button>
-    <button>Button 3</button>
+    <button id="addHeading">Add Heading</button>
+    <button id="addParagraph" onclick="addNewParagraph()">Add Paragraph</button>
+    <button id="setImage">Button 3</button>
     <!--  -->
 
     <script>
@@ -51,6 +51,33 @@
             document.body.style.background = event.target.value
         })
 
+        document.querySelector("#addHeading").onclick = ()=>{
+        let newHeading = document.createElement("h1");
+        newHeading.innerText = "This is new Heading";
+        document.body.appendChild(newHeading);
+        console.log(newHeading)
+    
+    }
+
+
+    function addNewParagraph(){
+
+    
+    let newParagraph = document.createElement("p");
+    newParagraph.innerText = "This is new Paragraph";
+    document.body.insertBefore(newParagraph,document.querySelector("h1+p"));
+    }
+
+
+
+    document.getElementById('setImage').ondblclick = ()=>{
+        let src = "https://www.logo.wine/a/logo/Tesla%2C_Inc./Tesla%2C_Inc.-Logomark%26Wordmark-Black-Logo.wine.svg";
+
+        document.querySelector('img').src = src;
+        document.querySelector('img').alt = "Tesla";
+        document.querySelector('img').width = "600";
+
+    }
 
 
     </script>
