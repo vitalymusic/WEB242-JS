@@ -23,8 +23,32 @@
 
         function newWindow(){
             let url="https://ss.com";
-            window.open(url,"New Window","left=300,top=200,width=600,height=320,fullscreen=no,location=no,resizable=yes")
+            window.open(url,"New Window","left=300,top=200,width=600,height=320,fullscreen=no,location=no,resizable=yes");
         }
+
+        if(screen.width<1024){
+            alert("screen to small"); 
+        }
+
+        // setTimeout(()=>{
+        //     window.location.href = "https://ss.com";
+        // },5000)
+
+        // setInterval(()=>{
+        //     window.location.reload();
+        // },2000);
+        
+        console.log(window.history.length)
+        screen.height
+
+
+        
+        if(localStorage.getItem("username")==""){
+            window.localStorage.setItem("Username",prompt("Your name"));
+        }
+
+        document.cookie = `username=${localStorage.getItem("Username")},max-age=7200`;
+
     </script>
 </body>
 </html>
