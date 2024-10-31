@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
 </head>
 <body>
+        <button onclick="menu()">MENU</button>
+    <div>
+        menu
+    </div>
 
     <h1 onclick="alert()">JS Events</h1>
     <!--  onclick="alert()" не использовать-->
@@ -21,6 +31,7 @@
     <button id="addParagraph" onclick="addNewParagraph()">Add Paragraph</button>
     <button id="setImage">Button 3</button>
     <!--  -->
+
 
     <script>
         // Events
@@ -69,7 +80,7 @@
     }
 
 
-
+    
     document.getElementById('setImage').ondblclick = ()=>{
 
         let src = "https://www.logo.wine/a/logo/Tesla%2C_Inc./Tesla%2C_Inc.-Logomark%26Wordmark-Black-Logo.wine.svg";
@@ -79,11 +90,26 @@
         document.querySelector('img').src = src;
         document.querySelector('img').alt = "Tesla";
         document.querySelector('img').width = "600";
-
-        
     }
 
 
+    let allElements = document.body.children;
+    console.log(allElements);
+
+
+    // for(element of allElements){
+    //     element.addEventListener("dblclick",function(){
+    //         console.log(this);
+    //         // this.remove();
+    //         this.style.display = "none";
+    //     })
+    // }
+
+
+
+    function menu(){
+        document.querySelector("div").classList.toggle('hide');
+    }
     </script>
 </body>
 </html>
