@@ -7,6 +7,7 @@
 </head>
 <body style="height: 5000px;">
     <h1>BOM object model</h1>
+    <button onclick="newWindow()">Open Window</button>
 
     <script>
         console.log(window);
@@ -20,6 +21,10 @@
         // console.log(window.scrollY);
 
 
+        function newWindow(){
+            let url="https://ss.com";
+            window.open(url,"New Window","left=300,top=200,width=600,height=320,fullscreen=no,location=no,resizable=yes")
+        }
     </script>
 </body>
 </html>
