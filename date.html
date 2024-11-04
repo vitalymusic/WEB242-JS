@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        setInterval(() => {
+            let date = new Date();
+            console.log(Date.now());//Текушее время в милисекундах
+            let hours = date.getHours()<10?`0${date.getHours()}`:date.getHours();
+            let minutes = date.getMinutes()<10?`0${date.getMinutes()}`:date.getMinutes();
+            let seconds = date.getSeconds()<10?`0${date.getSeconds()}`:date.getSeconds();
+            document.body.innerText = `${hours}:${minutes}:${seconds}`
+        }, 1000)
+
+
+
+        let now = Date.now();//Текушее время в милисекундах
+        let nextWeek = new Date(now+=(1000*3600*24*7));
+
+
+        console.log(nextWeek);
+
+    </script>
+</body>
+
+</html>
