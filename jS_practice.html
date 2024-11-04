@@ -78,12 +78,19 @@
                         button.classList.remove("active");
                     }
                     this.classList.add("active");
-                    active_tab = this.dataset("tab");
-                    console.log(active_tab);
+                    openTab(this.dataset.tab);
+                    
                 }
             }
 
+            function openTab(number){
+                for(tab of tabs_content){
+                    tab.style.display = "none";
+                }
+                document.querySelector(`#${number}`).style.display = "block";
+            }
 
+            tabs_buttons[0].click();
 
 
 
