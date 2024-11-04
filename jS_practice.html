@@ -101,6 +101,44 @@
                 document.querySelector(`#${number}`).style.display = "block";
             }
             tabs_buttons[0].click();
+
+            let productsData = [
+                {
+                    name:"Яблоки",
+                    price:2.67,
+                    img:""
+                },
+                {
+                    name:"Мандарины",
+                    price:3.78,
+                    img:"" 
+                },
+                {
+                    name:"Апельсины",
+                    price:3.20,
+                    img:""
+                },
+                {
+                    name:"Авокадо",
+                    price:5.20,
+                    img:""
+                }
+            ]
+
+
+            for (product of productsData){
+                document.querySelector(".products").innerHTML+=`
+                <div class="product">
+                    <h3>${product.name}</h3>
+                    <h5>${product.price}</h5>
+                    <div>
+                        <button data-name="${product.name}" data-price="${product.price}">Купить</button>
+                    </div>
+                </div>        
+                `
+            }
+
+
         })
     </script>
 </head>
