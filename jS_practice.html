@@ -130,7 +130,8 @@
                 document.querySelector(".products").innerHTML+=`
                 <div class="product">
                     <h3>${product.name}</h3>
-                    <h5>${product.price}</h5>
+                    <h5>${product.price}&euro;</h5>
+                    <img src="${product.img}" width="120px">
                     <div>
                         <button data-name="${product.name}" data-price="${product.price}">Купить</button>
                     </div>
