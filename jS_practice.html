@@ -7,7 +7,10 @@
     <title>Document</title>
 
     <style>
-
+        .active{
+            background-color: aqua;
+            font-weight: bolder;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -54,9 +57,36 @@
             }
 
 
-            setInterval(()=>{
-                rightBtn.click();
-            },1000)
+            // setInterval(()=>{
+            //     rightBtn.click();
+            // },1000)
+
+
+
+            // tabs
+
+            let tabs_buttons = document.querySelectorAll('.tabs_link a');
+            let tabs_content = document.querySelectorAll('.tabs_content div');
+            let active_tab = "";
+
+
+            for(button of tabs_buttons){
+
+                button.onclick = function(e){
+                    e.preventDefault();
+                    for(button of tabs_buttons){
+                        button.classList.remove("active");
+                    }
+                    this.classList.add("active");
+                    active_tab = this.dataset("tab");
+                    console.log(active_tab);
+                }
+            }
+
+
+
+
+
         })
     </script>
 </head>
@@ -64,7 +94,7 @@
 <body>
     <h1>Image Slider</h1>
     <div class="slider">
-        <img src="" alt="" width="100%">
+        <img src="" alt="" width="10%">
         <div class="buttons">
             <button id="left"> <- </button>
             <button id="right"> -> </button>
@@ -74,9 +104,9 @@
     <h1>Tabs</h1>
     <div class="tabs">
         <div class="tabs_link">
-            <a href="">Tab1</a>
-            <a href="">Tab2</a>
-            <a href="">Tab3</a>
+            <a href="" data-tab="tab1">Tab1</a>
+            <a href="" data-tab="tab2">Tab2</a>
+            <a href="" data-tab="tab3">Tab3</a>
         </div>
         <div class="tabs_content">
             <div id="tab1">
