@@ -11,6 +11,17 @@
             background-color: aqua;
             font-weight: bolder;
         }
+
+        .products{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        .product{
+            border:2px solid red;
+            padding: 30px;
+            margin: 10px;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -89,11 +100,7 @@
                 }
                 document.querySelector(`#${number}`).style.display = "block";
             }
-
             tabs_buttons[0].click();
-
-
-
         })
     </script>
 </head>
@@ -131,6 +138,9 @@
         </div>
     </div>
 
+    <h1>вывод товаров</h1>
+
+    <div class="products"></div>
 
 </body>
 
