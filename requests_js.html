@@ -52,15 +52,19 @@
             for(row of data){
                 document.querySelector(".container").innerHTML+=`
                     <div class="user" data-id="${row.id}">
-                        <h2>${row.name}</h2>
-                        <p>Email:${row.email}</p>
-                        <h3>Address</h3>
-                            <p>Street:${row.address.street}</p>
-                            <p>City:${row.address.city}</p> 
+                        <h2 data-id="${row.id}">${row.name}</h2>
+                        <p data-id="${row.id}">Email:${row.email}</p>
+                        <h3 data-id="${row.id}">Address</h3>
+                            <p data-id="${row.id}">Street:${row.address.street}</p>
+                            <p data-id="${row.id}">City:${row.address.city}</p> 
                     </div>           
 
                 `;
             }
+         }
+
+         function upper(text){
+            return String(text).charAt(0).toUpperCase()+String(text).substring(1).toLowerCase()
          }
 
 
@@ -68,12 +72,16 @@
             console.log(data);
             let dialog = document.querySelector('dialog');
             dialog.querySelector("p").innerHTML = "";
+            let i=1;
             for(key in data){
+                
                 dialog.querySelector("p").innerHTML += `
-                <div>
-                    <i>${key}</i>:<b>${data[key]}</b>
+                <div class="user user${i}">
+                    <p>${upper(key)}</p>
+                    <h3>${data[key]}</h3>
                 </div>
             `;
+            i++
             }
             dialog.showModal();
 
@@ -81,10 +89,10 @@
 
          function addEvents(){
 
-               let usersDivs = document.querySelectorAll(".user");
+               let usersDivs = document.querySelectorAll(".user ");
                 for(userDiv of usersDivs){
                     userDiv.onclick = (e)=>{
-                        // console.log(e.target);
+                        console.log(e.target);
                         fetch(`https://jsonplaceholder.typicode.com/users/${e.target.dataset.id}`)
                         .then((data)=>{
                             return data.json()

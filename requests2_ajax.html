@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact Form</h1>
+
+    <form>
+        <input type="email" name="email" placeholder="Your email">
+        <input type="text" name="full-name" placeholder="Your name">
+        <textarea name="message" id="" placeholder="Your Message"></textarea>
+        <!-- add hidden Honeypot input to prevent spams -->
+        <input type="hidden" name="_gotcha" style="display:none !important">
+        <button type="submit">Send</button>
+    </form>
+
+
+
+    <script>
+        let formUrl = "https://getform.io/f/brooyrva";
+        let formEl = document.querySelector('form');
+
+
+        formEl.onsubmit = (e)=>{
+            e.preventDefault();
+            data = new FormData(formEl);
+            fetch(formUrl,{
+                method: "POST",
+                body: data,
+                headers: {
+                    "Accept": "application/json",
+                },
+            })
+
+        }
+
+
+
+    </script>
+</body>
+</html>
